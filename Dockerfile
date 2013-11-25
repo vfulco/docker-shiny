@@ -19,13 +19,17 @@ RUN apt-get upgrade -y -q
 RUN apt-get dist-upgrade -y -q
 
 # Installing R and some other package
-RUN apt-get install -y -q r-base r-base-dev gdebi-core libapparmor1 supervisor sudo
+RUN apt-get install -y -q r-base r-base-dev gdebi-core libapparmor1 supervisor sudo libcurl4-openssl-dev
 
 # Installing shyny
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 RUN wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-0.4.0.8-amd64.deb
 RUN gdebi --n shiny-server-0.4.0.8-amd64.deb
 RUN rm shiny-server-0.4.0.8-amd64.deb
+
+# copying example to the server
+RUN mkdir -p /srv/shiny-server
+RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/.
 
 
 # supervisor configuration
