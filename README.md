@@ -18,6 +18,6 @@ you can check http://rstudio.github.io/shiny-server/latest/#configuration-settin
 
 example : http://www.quantumobject.com:49167/
 
-using the sample configuration
+using the demo configuration
 
 note : it was created by using angelrr7702/ubuntu-13.10-sshd and installing the package R and Shiny-server from rstudio.com . RStudio is a trademark of RStudio, Inc.
