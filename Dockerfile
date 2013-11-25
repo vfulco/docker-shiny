@@ -1,5 +1,5 @@
 # Shiny container
-# VERSION               0.0.2
+# VERSION               0.0.3
 
 FROM angelrr7702/ubuntu-13.10-sshd
 
@@ -19,22 +19,13 @@ RUN apt-get upgrade -y -q
 RUN apt-get dist-upgrade -y -q
 
 # Installing R and some other package
-RUN apt-get install -y -q r-base r-base-dev gdebi-core libapparmor1 supervisor libcurl4-openssl-dev
-
-# try to fix a problem with installation for shiny
-#RUN export PWD
-
+RUN apt-get install -y -q r-base r-base-dev gdebi-core libapparmor1 supervisor sudo
 
 # Installing shyny
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 RUN wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-0.4.0.8-amd64.deb
 RUN gdebi --n shiny-server-0.4.0.8-amd64.deb
 RUN rm shiny-server-0.4.0.8-amd64.deb
-
-
-# add regular linux user to add user to RStudio 
-RUN adduser --disabled-password --gecos "" guest
-RUN echo "guest:guest"|chpasswd
 
 
 # supervisor configuration
