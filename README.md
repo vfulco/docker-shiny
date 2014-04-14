@@ -16,8 +16,5 @@ Need to log in to the container by ssh (root:rootprovisional) and them : passwd 
 
 you can check http://rstudio.github.io/shiny-server/latest/#configuration-settings for more info about shiny-server
 
-example : http://www.quantumobject.com:49167/
-
-using the example configuration
 
 note : it was created by using angelrr7702/ubuntu-13.10-sshd and installing the package R and Shiny-server from rstudio.com . RStudio is a trademark of RStudio, Inc.
