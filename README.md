@@ -1,6 +1,8 @@
 shiny
 =====
 
+shiny server: 1.0.0.42-amd64
+
 Dockerfile to be use to build image for docker container with ubuntu 13.10 plus sshd service and Shiny-server
 
 
