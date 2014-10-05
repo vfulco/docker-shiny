@@ -9,7 +9,7 @@ Shiny server : use to host and manage shiny application (R - powered web applica
 
 To make it work :
 
-docker run -d -p 3838 quantumobject/shiny
+docker run -d -p 3838 quantumobject/docket-shiny
 
 You can check http://rstudio.github.io/shiny-server/latest/#configuration-settings for more info about shiny-server
 
