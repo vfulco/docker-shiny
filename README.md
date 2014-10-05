@@ -10,7 +10,7 @@ Shiny server : use to host and manage shiny application (R - powered web applica
 
 To make it work :
 
-docker run -d -p 22 -p 3838 angelrr7702/shiny
+docker run -d -p 3838 angelrr7702/shiny
 
 To configured it :
 
