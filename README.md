@@ -3,13 +3,13 @@ shiny
 
 shiny server: 1.2.2.367
 
-Dockerfile to be use to build image for docker container with ubuntu 14.04 plus sshd service and Shiny-server
+Dockerfile to be use to build image for docker container with quantumobject/docker-baseimage and Shiny-server
 
 Shiny server : use to host and manage shiny application (R - powered web application)
 
 To make it work :
 
-docker run -d -p 3838 quantumobject/docket-shiny
+docker run -d -p 3838 quantumobject/docker-shiny
 
 You can check http://rstudio.github.io/shiny-server/latest/#configuration-settings for more info about shiny-server
 
