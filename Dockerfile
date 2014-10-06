@@ -49,9 +49,6 @@ RUN chmod +x /sbin/pre-conf \
     && /bin/bash -c /sbin/pre-conf \
     && rm /sbin/pre-conf
 
-#down/shutdown script ... use to be run in container before stop or shutdown .to keep service..good status..and maybe
-#backup or keep data integrity .. 
-
 ##scritp that can be running from the outside using docker-bash tool ...
 ## for example to create backup for database with convitation of VOLUME   dockers-bash container_ID backup_mysql
 COPY backup.sh /sbin/backup
