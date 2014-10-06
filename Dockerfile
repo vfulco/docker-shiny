@@ -38,9 +38,10 @@ RUN mkdir -p /etc/my_init.d
 COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
-
 ##Adding Deamons to containers
-#refers to dockerfile_reference
+RUN mkdir /etc/service/shiny-server
+COPY shiny-server.sh /etc/service/shiny-server/run
+RUN chmod +x /etc/service/shiny-server/run
 
 #pre-config scritp for different service that need to be run when container image is create 
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
