@@ -28,6 +28,8 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" \
           && rm shiny-server-1.2.2.367-amd64.deb \
           && mkdir -p /srv/shiny-server \
           && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/.
+          
+RUN  R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')" 
 
 ##startup scripts  
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't 
