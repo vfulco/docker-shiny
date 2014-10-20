@@ -1,7 +1,7 @@
 shiny
 =====
 
-shiny server: 1.2.2.367
+shiny server: 1.2.3.368
 
 Dockerfile to be use to build image for docker container with quantumobject/docker-baseimage and Shiny-server
 
