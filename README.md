@@ -1,16 +1,56 @@
-shiny
-=====
+# docker-shiny
 
-shiny server: 1.3.0.403
+Docker container for [shiny server 1.3.0.403][3]
 
-Dockerfile to be use to build image for docker container with quantumobject/docker-baseimage and Shiny-server
+"A web application framework for R"
 
-Shiny server : use to host and manage shiny application (R - powered web application)
+"Turn your analyses into interactive web applications"
 
-To make it work :
+Shiny server: use to host and manage shiny application (R - powered web application)
 
-docker run -d -p 3838 quantumobject/docker-shiny
+## Install dependencies
 
-You can check http://rstudio.github.io/shiny-server/latest/#configuration-settings for more info about shiny-server
+  - [Docker][2]
+
+To install docker in Ubuntu 14.04 use the commands:
+
+    $ sudo apt-get update
+    $ sudo apt-get install docker.io
+
+ To install docker in other operating systems check [docker online documentation][4]
+
+## Usage
+
+To run container use the command below:
+
+    $ docker run -d -p 3838:3838 quantumobject/docker-shiny
+
+## Accessing the Shiny Server applications:
+
+After that check with your browser at addresses plus the port 3838 :
+
+  - **http://host_ip:3838/**
+
+To access it , configured and edit files inside of the container :
+
+    $ docker exec -it container-id /bin/bash
 
 note : it was created by using quantumobject/docker-baseimage and installing the package R and Shiny-server from rstudio.com . RStudio is a trademark of RStudio, Inc.
+
+## More Info
+
+About Shiny Server: [shiny.rstudio.com][1]
+
+To help improve this container [docker-shiny][5]
+
+Shiny Server [Administrator's Guide][6]
+
+Example of [Shiny Server][7]
+
+[1]:http://shiny.rstudio.com
+[2]:https://www.docker.com
+[3]:http://www.rstudio.com/products/shiny/download-server
+[4]:http://docs.docker.com
+[5]:https://github.com/QuantumObject/docker-shiny
+[6]:http://rstudio.github.io/shiny-server/latest
+[7]:http://www.quantumobject.com:3838
