@@ -31,6 +31,10 @@ After that check with your browser at addresses plus the port 3838 :
 
   - **http://host_ip:3838/**
 
+To access it , configured and edit files inside of the container :
+
+    $ docker exec -it container-id /bin/bash
+
 note : it was created by using quantumobject/docker-baseimage and installing the package R and Shiny-server from rstudio.com . RStudio is a trademark of RStudio, Inc.
 
 ## More Info
