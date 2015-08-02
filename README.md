@@ -1,6 +1,6 @@
 # docker-shiny
 
-Docker container for [shiny server 1.3.0.403][3]
+Docker container for [shiny server 1.4.0.721][3]
 
 "A web application framework for R"
 
@@ -15,7 +15,7 @@ Shiny server: use to host and manage shiny application (R - powered web applicat
 To install docker in Ubuntu 14.04 use the commands:
 
     $ sudo apt-get update
-    $ sudo apt-get install docker.io
+    $ wget -qO- https://get.docker.com/ | sh
 
  To install docker in other operating systems check [docker online documentation][4]
 
