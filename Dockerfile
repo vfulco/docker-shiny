@@ -1,12 +1,12 @@
 #name of container: docker-shiny
-#versison of container: 0.5.5
-FROM quantumobject/docker-baseimage
+#versison of container: 0.5.6
+FROM quantumobject/docker-baseimage:15.04
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN echo "deb http://archive.ubuntu.com/ubuntu utopic-backports main restricted universe" >> /etc/apt/sources.list
-RUN (echo "deb http://cran.mtu.edu/bin/linux/ubuntu utopic/" >> /etc/apt/sources.list && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9)
+RUN echo "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc)-backports main restricted universe" >> /etc/apt/sources.list
+RUN (echo "deb http://cran.mtu.edu/bin/linux/ubuntu $(lsb_release -sc)/" >> /etc/apt/sources.list && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9)
 RUN apt-get update && apt-get install -y -q r-base  \
                     r-base-dev \
                     gdebi-core \  
@@ -21,9 +21,9 @@ RUN apt-get update && apt-get install -y -q r-base  \
                     
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" \
           && update-locale  \
-          && wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.4.0.721-amd64.deb \
-          && gdebi --n shiny-server-1.4.0.721-amd64.deb \
-          && rm shiny-server-1.4.0.721-amd64.deb \
+          && wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.0.730-amd64.deb \
+          && gdebi --n shiny-server-1.5.0.730-amd64.deb \
+          && rm shiny-server-1.5.0.730-amd64.deb \
           && mkdir -p /srv/shiny-server \
           && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/.
           
