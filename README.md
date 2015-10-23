@@ -1,6 +1,6 @@
 # docker-shiny
 
-Docker container for [shiny server 1.4.0.721][3]
+Docker container for [shiny server 1.5.0.730][3]
 
 "A web application framework for R"
 
@@ -47,6 +47,8 @@ Shiny Server [Administrator's Guide][6]
 
 Example of [Shiny Server][7]
 
+For additional info about us and our projects check our site [www.quantumobject.com][8]
+
 [1]:http://shiny.rstudio.com
 [2]:https://www.docker.com
 [3]:http://www.rstudio.com/products/shiny/download-server
@@ -54,3 +56,4 @@ Example of [Shiny Server][7]
 [5]:https://github.com/QuantumObject/docker-shiny
 [6]:http://rstudio.github.io/shiny-server/latest
 [7]:http://www.quantumobject.com:3838
+[8]:http://www.quantumobject.com
