@@ -41,13 +41,6 @@ RUN mkdir /etc/service/shiny-server
 COPY shiny-server.sh /etc/service/shiny-server/run
 RUN chmod +x /etc/service/shiny-server/run
 
-#pre-config scritp for different service that need to be run when container image is create 
-#maybe include additional software that need to be installed ... with some service running ... like example mysqld
-COPY pre-conf.sh /sbin/pre-conf
-RUN chmod +x /sbin/pre-conf \
-    && /bin/bash -c /sbin/pre-conf \
-    && rm /sbin/pre-conf
-
 ##scritp that can be running from the outside using docker-bash tool ...
 ## for example to create backup for database with convitation of VOLUME   dockers-bash container_ID backup_mysql
 COPY backup.sh /sbin/backup
