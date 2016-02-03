@@ -55,5 +55,5 @@ For additional info about us and our projects check our site [www.quantumobject.
 [4]:http://docs.docker.com
 [5]:https://github.com/QuantumObject/docker-shiny
 [6]:http://rstudio.github.io/shiny-server/latest
-[7]:http://www.quantumobject.com:3838
-[8]:http://www.quantumobject.com
+[7]:http://shiny.quantumobject.org
+[8]:http://www.quantumobject.org
