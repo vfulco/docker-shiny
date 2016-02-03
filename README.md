@@ -47,7 +47,7 @@ Shiny Server [Administrator's Guide][6]
 
 Example of [Shiny Server][7]
 
-For additional info about us and our projects check our site [www.quantumobject.com][8]
+For additional info about us and our projects check our site [www.quantumobject.org][8]
 
 [1]:http://shiny.rstudio.com
 [2]:https://www.docker.com
