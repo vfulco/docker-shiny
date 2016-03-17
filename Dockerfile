@@ -23,8 +23,10 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" \
           && wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.0.730-amd64.deb \
           && gdebi --n shiny-server-1.5.0.730-amd64.deb \
           && rm shiny-server-1.5.0.730-amd64.deb \
-          && mkdir -p /srv/shiny-server \
-          && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/.
+          && mkdir -p /srv/shiny-server; sync  \
+          && mkdir -p  /srv/shiny-server/examples; sync \
+          && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/examples/. \
+          && cp -R /usr/local/lib/R/site-library/markdown/examples/* /srv/shiny-server/examples/.
           
 RUN  R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')" 
 
