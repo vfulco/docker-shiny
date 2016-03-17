@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec chpst -u nobody svlogd -tt /var/log/shiny-server/
+exec chpst -u shiny svlogd -tt /var/log/shiny-server/
