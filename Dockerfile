@@ -42,7 +42,7 @@ COPY shiny-server.sh /etc/service/shiny-server/run
 COPY shiny-server-log.sh /etc/service/shiny-server/log/run
 RUN chmod +x /etc/service/shiny-server/run /etc/service/shiny-server/log/run \
     && cp /var/log/cron/config /var/log/shiny-server/ \
-    && chown -R nobody /var/log/shiny-server
+    && chown -R shiny /var/log/shiny-server
 
 #volume for Shiny Apps and static assets. Here is the folder for index.html(link) and sample apps.
 VOLUME /srv/shiny-server
