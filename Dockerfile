@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y -q r-base  \
                     r-base-dev \
                     gdebi-core \  
                     libapparmor1 \
-                    supervisor \
                     sudo \
                     libssl0.9.8 \
                     libcurl4-openssl-dev \
