@@ -41,6 +41,9 @@ RUN mkdir /etc/service/shiny-server
 COPY shiny-server.sh /etc/service/shiny-server/run
 RUN chmod +x /etc/service/shiny-server/run
 
+#volume for Shiny Apps and static assets.
+VOLUME /srv/shiny-server
+
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
 EXPOSE 3838
