@@ -36,8 +36,8 @@ COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
 ##Adding Deamons to containers
-RUN mkdir /etc/service/shiny-server /var/log/shiny-server \
-    && mkdir /etc/service/shiny-server/log
+RUN mkdir /etc/service/shiny-server /var/log/shiny-server ; sync 
+RUN mkdir /etc/service/shiny-server/log
 COPY shiny-server.sh /etc/service/shiny-server/run
 COPY shiny-server-log.sh /etc/service/shiny-server/log/run
 RUN chmod +x /etc/service/shiny-server/run /etc/service/shiny-server/log/run \
