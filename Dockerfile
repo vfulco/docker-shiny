@@ -25,10 +25,10 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" \
           && rm shiny-server-1.5.0.730-amd64.deb \
           && mkdir -p /srv/shiny-server; sync  \
           && mkdir -p  /srv/shiny-server/examples; sync \
-          && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/examples/. \
-          && cp -R /usr/local/lib/R/site-library/markdown/examples/* /srv/shiny-server/examples/.
+          && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/examples/. 
           
-RUN  R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')" 
+RUN  R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')" \
+          && cp -R /usr/local/lib/R/site-library/markdown/examples/* /srv/shiny-server/examples/.
 
 ##startup scripts  
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't 
