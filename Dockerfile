@@ -5,8 +5,8 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN echo "deb http://archive.ubuntu.com/ubuntu $(DISTRIB_CODENAME)-backports main restricted universe" >> /etc/apt/sources.list
-RUN (echo "deb http://cran.mtu.edu/bin/linux/ubuntu $(DISTRIB_CODENAME)/" >> /etc/apt/sources.list && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9)
+RUN echo "deb http://archive.ubuntu.com/ubuntu $(/etc/container_environment/DISTRIB_CODENAME)-backports main restricted universe" >> /etc/apt/sources.list
+RUN (echo "deb http://cran.mtu.edu/bin/linux/ubuntu $(/etc/container_environment/DISTRIB_CODENAME)/" >> /etc/apt/sources.list && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9)
 RUN apt-get update && apt-get install -y -q r-base  \
                     r-base-dev \
                     gdebi-core \  
@@ -27,8 +27,7 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" \
           && mkdir -p  /srv/shiny-server/examples; sync \
           && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/examples/. 
           
-RUN  R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')" \
-          && cp -R /usr/local/lib/R/site-library/markdown/examples/* /srv/shiny-server/examples/.
+RUN  R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')"
 
 ##startup scripts  
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't 
