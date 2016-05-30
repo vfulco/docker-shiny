@@ -25,6 +25,11 @@ To run container use the command below:
 
     $ docker run -d -p 3838:3838 quantumobject/docker-shiny
 
+To run the container with your own Shiny applications located in a directory on
+your system, expose that directory path to the Shiny server inside the container:
+
+    $ docker run -d -p 3838:3838 -v <LOCAL DIRECTORY PATH>:/srv/shiny-server quantumobject/docker-shiny
+
 ## Accessing the Shiny Server applications:
 
 After that check with your browser at addresses plus the port 3838 :
