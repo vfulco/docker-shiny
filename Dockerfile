@@ -1,5 +1,5 @@
 #name of container: docker-shiny
-#versison of container: 0.5.6
+#versison of container: 0.5.7
 FROM quantumobject/docker-baseimage:15.04
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
@@ -38,10 +38,8 @@ RUN chmod +x /etc/my_init.d/startup.sh
 
 ##Adding Deamons to containers
 RUN mkdir /etc/service/shiny-server /var/log/shiny-server ; sync 
-RUN mkdir /etc/service/shiny-server/log
 COPY shiny-server.sh /etc/service/shiny-server/run
-COPY shiny-server-log.sh /etc/service/shiny-server/log/run
-RUN chmod +x /etc/service/shiny-server/run /etc/service/shiny-server/log/run \
+RUN chmod +x /etc/service/shiny-server/run  \
     && cp /var/log/cron/config /var/log/shiny-server/ \
     && chown -R shiny /var/log/shiny-server
 
