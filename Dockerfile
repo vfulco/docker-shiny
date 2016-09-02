@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y -q r-base  \
                     gdebi-core \  
                     libapparmor1 \
                     sudo \
-                    libssl1.0.0 \
+                    libssl0.9.8 \
                     libcurl4-openssl-dev \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
