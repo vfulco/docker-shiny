@@ -40,8 +40,7 @@ RUN chmod +x /etc/my_init.d/startup.sh
 RUN mkdir /etc/service/shiny-server /var/log/shiny-server ; sync 
 COPY shiny-server.sh /etc/service/shiny-server/run
 RUN chmod +x /etc/service/shiny-server/run  \
-    && cp /var/log/cron/config /var/log/shiny-server/ \
-    && chown -R shiny /var/log/shiny-server
+    && cp /var/log/cron/config /var/log/shiny-server/ 
 
 #volume for Shiny Apps and static assets. Here is the folder for index.html(link) and sample apps.
 VOLUME /srv/shiny-server
