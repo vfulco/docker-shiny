@@ -30,7 +30,7 @@ your system, expose that directory path to the Shiny server inside the container
 
     $ docker run -d -p 3838:3838 -v <LOCAL DIRECTORY PATH>:/srv/shiny-server quantumobject/docker-shiny
 
-When modified or adding files  to <LOCAL DIRECTORY PATH> you need to restart the container to allow it to change the files to the right ownership and permission.  
+When modified or adding files  to \<LOCAL DIRECTORY PATH\> you need to restart the container to allow it to change the files to the right ownership and permission.  
 
 ## Accessing the Shiny Server applications:
 
