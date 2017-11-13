@@ -1,11 +1,10 @@
 #name of container: docker-shiny
-#versison of container: 0.5.8
+#versison of container: 0.5.9
 FROM quantumobject/docker-baseimage:16.04
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
-#add repository and update the container
-#Installation of nesesary package/software for this containers...
-RUN echo "deb http://archive.ubuntu.com/ubuntu `cat /etc/container_environment/DISTRIB_CODENAME`-backports main restricted universe" >> /etc/apt/sources.list
+# Update the container
+# Installation of nesesary package/software for this containers...
 RUN (echo "deb http://cran.mtu.edu/bin/linux/ubuntu `cat /etc/container_environment/DISTRIB_CODENAME`/" >> /etc/apt/sources.list && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9)
 RUN apt-get update && apt-get install -y -q r-base  \
                     r-base-dev \
@@ -20,9 +19,9 @@ RUN apt-get update && apt-get install -y -q r-base  \
                     
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" \
           && update-locale  \
-          && wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.4.846-amd64.deb \
-          && dpkg -i --force-depends shiny-server-1.5.4.846-amd64.deb \
-          && rm shiny-server-1.5.4.846-amd64.deb \
+          && wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.6.875-amd64.deb \
+          && dpkg -i --force-depends shiny-server-1.5.6.875-amd64.deb \
+          && rm shiny-server-1.5.6.875-amd64.deb \
           && mkdir -p /srv/shiny-server; sync  \
           && mkdir -p  /srv/shiny-server/examples; sync \
           && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/examples/. 
